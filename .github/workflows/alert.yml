@@ -3,10 +3,6 @@ name: GitHub Security Scanner Alert
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  workflow_dispatch:
 
 jobs:
   build:
@@ -16,4 +12,4 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Call Postman Github security scanner flow
-        run: curl -X GET https://5de49fb59ffa4c948b51e9dd350d7304.flow.pstmn.io
+        run: curl -X POST https://5de49fb59ffa4c948b51e9dd350d7304.flow.pstmn.io -d '{"data":"Github"}'
